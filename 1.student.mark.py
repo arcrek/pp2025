@@ -10,12 +10,11 @@ def listStudents(students):
         print(f"{i+1}. ID: {student["id"]}, Name: {student["name"]}, DoB: {student["DoB"]}")
     print("\n")
 
-
 def inputMark(students, courses, coursesIdx):
     print(f"Input mark of courses {courses[coursesIdx]["name"]}:")
     marks = []
     for i, student in enumerate(students):
-        mark = input(f"\n{i + 1}. ID: {student["id"]}, Name: {student["name"]}: ")
+        mark = input(f"{i+1}. ID: {student["id"]}, Name: {student["name"]}: ")
         marks.append(int(mark))
     return marks
 
@@ -26,7 +25,7 @@ def showMarks(students, courses, coursesIdx):
         print(f"{i + 1}. ID: {student["id"]}, Name: {student["name"]}, Mark: {marks[i]}")
 
 def display():
-    print("----------")
+    print("\n----------")
     print("1. List Students")
     print("2. List Courses")
     print("3. Input Student mark")
@@ -52,7 +51,7 @@ def main():
     courseNubmer = int(input("\nInput number of courses: "))
 
     for i in range(0,courseNubmer):
-        print(f"\nInput course {i+1} information (id, name,):")
+        print(f"\nInput course {i+1} information (id, name):")
         id, name = [x for x in input().split(",")]
         courses.append({
                         "id": id,
@@ -61,7 +60,7 @@ def main():
 
         while True:
             display()
-            choice = int(input("\nYour choice: "))
+            choice = int(input("Your choice: "))
             if choice == 1:
                 listStudents(students)
             elif choice == 2:
